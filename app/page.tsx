@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white dark:bg-neutral-950 transition-colors duration-300">
+    <main className="min-h-screen bg-white dark:bg-neutral-950 transition-colors duration-300 relative">
       <Navbar />
       <Hero />
       <ProductCases />

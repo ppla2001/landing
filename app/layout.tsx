@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import { EmailModalProvider } from "@/contexts/EmailModalContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -11,8 +12,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Product Manager Portfolio",
-  description: "Product Manager landing page showcasing product thinking, impact, and experience",
+  title: "Pedro Pla · Product & Growth",
+  description:
+    "I turn ambiguous problems into clear roadmaps, ship products that scale, and find growth levers others miss.",
 };
 
 export default function RootLayout({
@@ -25,7 +27,7 @@ export default function RootLayout({
       <body className={`${inter.variable} font-sans antialiased`}>
         <ThemeProvider>
           <LanguageProvider>
-            {children}
+            <EmailModalProvider>{children}</EmailModalProvider>
           </LanguageProvider>
         </ThemeProvider>
       </body>

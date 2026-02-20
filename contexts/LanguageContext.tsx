@@ -32,7 +32,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem("language", newLanguage);
   };
 
-  const t = content[language];
+  const t = content[language] as Content;
 
   return (
     <LanguageContext.Provider value={{ language, toggleLanguage, t }}>

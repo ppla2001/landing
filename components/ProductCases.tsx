@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -11,6 +11,9 @@ interface CaseDetailModalProps {
 }
 
 function CaseDetailModal({ caseItem, onClose, labels }: CaseDetailModalProps) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -18,6 +21,15 @@ function CaseDetailModal({ caseItem, onClose, labels }: CaseDetailModalProps) {
     window.addEventListener("keydown", handleEscape);
     return () => window.removeEventListener("keydown", handleEscape);
   }, [onClose]);
+
+  const handleScroll = () => {
+    const el = scrollRef.current;
+    setShowScrollTop(el ? el.scrollTop > 100 : false);
+  };
+
+  const scrollToTop = () => {
+    scrollRef.current?.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <AnimatePresence>
@@ -33,9 +45,14 @@ function CaseDetailModal({ caseItem, onClose, labels }: CaseDetailModalProps) {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ type: "spring", damping: 25, stiffness: 300 }}
-          className="glass dark:glass-dark rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-white/20 dark:border-white/10"
+          className="relative glass dark:glass-dark rounded-3xl max-w-3xl w-full max-h-[90vh] shadow-2xl border border-white/20 dark:border-white/10 overflow-hidden"
           onClick={(e) => e.stopPropagation()}
         >
+          <div
+            ref={scrollRef}
+            onScroll={handleScroll}
+            className="overflow-y-auto h-full max-h-[90vh]"
+          >
           {/* Image */}
           <div className="relative w-full h-64 bg-gradient-to-br from-accent-100 via-accent-200 to-accent-300 dark:from-accent-900 dark:via-accent-800 dark:to-accent-700 flex items-center justify-center overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent" />
@@ -112,6 +129,39 @@ function CaseDetailModal({ caseItem, onClose, labels }: CaseDetailModalProps) {
                 ))}
             </div>
           </div>
+          </div>
+
+          {/* Scroll to top button - fixed at bottom-right of modal */}
+          <AnimatePresence>
+            {showScrollTop && (
+              <motion.button
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.2 }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  scrollToTop();
+                }}
+                className="absolute bottom-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-neutral-800/90 dark:bg-neutral-900/95 border border-neutral-700/50 dark:border-neutral-700/50 text-neutral-200 dark:text-neutral-300 hover:bg-neutral-700/90 dark:hover:bg-neutral-800/95 hover:text-white transition-colors shadow-lg"
+                aria-label="Scroll to top"
+              >
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 15l7-7 7 7"
+                  />
+                </svg>
+              </motion.button>
+            )}
+          </AnimatePresence>
         </motion.div>
       </motion.div>
     </AnimatePresence>

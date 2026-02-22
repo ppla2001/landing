@@ -12,11 +12,19 @@ export default function Navbar() {
   const { language, toggleLanguage, t } = useLanguage();
 
   useEffect(() => {
+    let rafId: number | null = null;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      if (rafId !== null) return;
+      rafId = requestAnimationFrame(() => {
+        setIsScrolled(window.scrollY > 50);
+        rafId = null;
+      });
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (rafId !== null) cancelAnimationFrame(rafId);
+    };
   }, []);
 
   const scrollToSection = (
@@ -40,21 +48,20 @@ export default function Navbar() {
     >
       <div className="max-w-5xl mx-auto px-3 sm:px-4 pointer-events-auto">
         {/* Floating pill container */}
-        <motion.div
+        <div
           className={`flex items-center justify-between rounded-full border backdrop-blur-xl px-4 sm:px-6 py-2 sm:py-2.5 ${
             isScrolled
               ? "bg-white/75 dark:bg-neutral-900/65 border-neutral-200/70 dark:border-white/10"
               : "bg-white/60 dark:bg-neutral-950/40 border-neutral-200/50 dark:border-white/10"
-          }`}
-          animate={{
-            boxShadow: isScrolled
+          } ${
+            isScrolled
               ? theme === "dark"
-                ? "0 18px 45px rgba(0,0,0,0.55)"
-                : "0 18px 45px rgba(15,23,42,0.16)"
+                ? "shadow-[0_18px_45px_rgba(0,0,0,0.55)]"
+                : "shadow-[0_18px_45px_rgba(15,23,42,0.16)]"
               : theme === "dark"
-                ? "0 12px 30px rgba(0,0,0,0.45)"
-                : "0 12px 30px rgba(15,23,42,0.12)",
-          }}
+                ? "shadow-[0_12px_30px_rgba(0,0,0,0.45)]"
+                : "shadow-[0_12px_30px_rgba(15,23,42,0.12)]"
+          }`}
         >
           {/* Left: Logo/Name */}
           <motion.a
@@ -183,7 +190,7 @@ export default function Navbar() {
               </motion.span>
             </motion.button>
           </div>
-        </motion.div>
+        </div>
 
         {/* Mobile menu dropdown */}
         <AnimatePresence>

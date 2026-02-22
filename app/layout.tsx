@@ -24,6 +24,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var t=localStorage.getItem("theme");var d=window.matchMedia("(prefers-color-scheme: dark)").matches;var dark=t==="dark"||(!t&&d);document.documentElement.classList.toggle("dark",dark);})();`,
+          }}
+        />
+      </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         <ThemeProvider>
           <LanguageProvider>

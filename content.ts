@@ -81,6 +81,14 @@ export const content = {
       ],
       labels: {
         problem: "Problem",
+        discovery: "Discovery",
+        solution: "Solution",
+        execution: "Execution",
+        results: "Results",
+        marketAnalysis: "Market Analysis",
+        productSpecification: "Product Specification",
+        buildDecision: "Build Decision",
+        learnings: "Learnings",
         hypothesis: "Hypothesis",
         proposal: "Proposal",
         metrics: "Metrics",
@@ -149,7 +157,7 @@ export const content = {
           role: "Co-Founder & Growth Lead",
           company: "Vellicity",
           description:
-            "Built a growth agency for SMBs in Australia with a co-founder, fully remote from Argentina. Managed client accounts end-to-end  -  from the first call through performance reviews  -  while building the systems that kept delivery consistent as we scaled: onboarding flows, templates, delivery processes. Cross-functional from day one  -  clients, designers, and developers all in the mix simultaneously.",
+            "Built a growth agency for SMBs in Australia with a co-founder, fully remote from Argentina. Managed client accounts end-to-end  -  from the first call through performance reviews  -  while building the systems that kept delivery consistent as we scaled: onboarding flows, templates, delivery processes. Cross-functional from day one  -  clients and designers all in the mix simultaneously.",
         },
         {
           role: "Marketing Analyst",
@@ -167,6 +175,13 @@ export const content = {
         "Open to PM, growth, and strategy roles - especially at teams that move fast and think deeply.",
       linkedin: "https://www.linkedin.com/in/pedro-pla1/",
       email: "plapedro@outlook.com",
+      emailModal: {
+        title: "Get in touch",
+        copied: "Copied!",
+        copyAddress: "Copy address",
+        openMailApp: "Open mail app",
+        close: "Close",
+      },
     },
 
     // Footer
@@ -182,7 +197,7 @@ export const content = {
   es: {
     // Navbar
     nav: {
-      name: "[TU_NOMBRE]",
+      name: "Pedro Pla",
       links: [
         { label: "Casos de Producto", href: "#cases" },
         { label: "Impacto", href: "#impact" },
@@ -193,9 +208,10 @@ export const content = {
 
     // Hero Section
     hero: {
-      name: "[TU_NOMBRE_COMPLETO]",
-      headline: "[TU_TITULAR]",
-      subtitle: "[TU_SUBTITULO]",
+      name: "Pedro Pla",
+      headline: "De la estrategia a la ejecución",
+      subtitle:
+        "Conecto producto, growth y operaciones para construir cosas que realmente funcionan",
       cta: {
         primary: "Ver Mi Trabajo",
         secondary: "Hablemos",
@@ -204,45 +220,70 @@ export const content = {
 
     // Product Cases Section
     cases: {
-      title: "Pensamiento de Producto",
+      title: "Producto en acción",
       items: [
         {
           id: 1,
           image: "/case1.jpg",
-          title: "[CASO_1_TITULO]",
-          summary: "[CASO_1_RESUMEN]",
-          problem: "[CASO_1_PROBLEMA]",
-          discovery: "[CASO_1_DESCUBRIMIENTO]",
-          hypothesis: "[CASO_1_HIPOTESIS]",
-          solution: "[CASO_1_SOLUCION]",
-          execution: "[CASO_1_EJECUCION]",
-          results: "[CASO_1_RESULTADOS]",
-          proposal: "[CASO_1_PROPUESTA]",
-          metrics: "[CASO_1_METRICAS]",
+          title: "Willow",
+          summary:
+            "Lideré producto en un SaaS de inventario multicanal, llevándolo de cero a primeros clientes pagos - siendo responsable del discovery, la priorización y la ejecución front-end mientras navegaba las limitaciones de una startup en etapa temprana.",
+          problem:
+            "En Argentina, la mayoría de los negocios de e-commerce no venden por un solo canal. Un retailer típico puede tener su propia tienda online (en TiendaNube, Shopify, WooCommerce, etc.), publicaciones en marketplaces como MercadoLibre o Frávega, y a veces un local físico. Cada canal tiene su propio sistema de inventario, catálogo de productos y reglas propias.\n\nEsto genera realidades operativas muy dolorosas. Cuando un producto se vende en MercadoLibre, el retailer tiene que actualizar el stock manualmente en TiendaNube y en todos los demás canales. Si se olvida o tarda demasiado, arriesga vender productos que no tiene. Muchos retailers dividían el inventario entre canales como solución, pero perdían visibilidad del stock real total.\n\nLa complejidad va más allá del inventario. El algoritmo de búsqueda de MercadoLibre premia palabras clave distintas a las que un retailer usaría en su propia tienda, por lo que los títulos suelen tener que ser distintos por plataforma. Las estructuras de comisión varían, así que los precios también pueden diferir. Algunos vendedores de MercadoLibre crean múltiples publicaciones para un mismo producto  -  una con precio en cuotas, otra de pago único  -  cada una requiriendo gestión por separado.\n\nPara retailers pequeños y medianos sin equipos de operaciones dedicados, esto significaba horas de trabajo repetitivo por día, riesgo constante de errores y ninguna visión clara de su posición de inventario.",
+          discovery:
+            "Empezamos hablando con retailers, agencias que gestionaban múltiples tiendas y personas con experiencia profunda en el ecosistema de e-commerce argentino. Esas conversaciones revelaron que el problema era más matizado de lo que esperábamos  -  y nos abrieron oportunidades que no habíamos anticipado.\n\nEl primer insight llegó por timing. MercadoShops, el producto de tiendas dentro de MercadoLibre, anunció que cerraba el 31 de diciembre de 2025. Los retailers tendrían que migrar miles de productos manualmente a nuevas plataformas  -  y muchos simplemente no lo estaban haciendo. Ningún competidor ofrecía herramientas de migración. Eso nos dio una oportunidad de entrada al mercado con una fecha límite incorporada.\n\nEl segundo insight surgió de ver datos reales de usuarios. Habíamos asumido que los retailers tendrían catálogos prolijos  -  SKUs consistentes, información precisa. La realidad era más desordenada: SKUs que no coincidían entre plataformas, productos sin SKU, duplicados por todos lados. Cualquier producto que asumiera datos limpios iba a fallar.\n\nTambién descubrimos flujos de trabajo inesperados. Algunos retailers usaban lectores de inventario físicos conectados a su propio software. No iban a desaparecer  -  estaban embebidos en la operación. Eso abrió oportunidades de integración y nos recordó que nuestro producto tenía que encajar en los flujos existentes, no reemplazarlos.\n\nTrabajar con agencias reveló necesidades distintas: cambiar entre cuentas de clientes de forma eficiente, permisos granulares por equipo, operaciones masivas entre tiendas. Esas conversaciones moldearon nuestra visión de multi-tenancy y control de acceso.\n\nUn tema seguía apareciendo: la flexibilidad no era opcional. Algunos usuarios querían stock espejado idéntico en todos los canales. Otros necesitaban asignar cantidades por canal manteniendo visibilidad total. Algunos querían títulos uniformes; otros necesitaban variaciones por plataforma. Un enfoque rígido no iba a servir a este mercado.",
+          solution:
+            "Construimos Willow  -  una plataforma que permite a los retailers gestionar inventario e información de productos en todos sus canales de venta desde un solo lugar.\n\nEl núcleo era un sistema de sincronización configurable. El modo espejo mantenía el stock idéntico en todos lados  -  si se vendía una unidad en MercadoLibre, TiendaNube se actualizaba automáticamente. Como alternativa, los retailers podían asignar cantidades específicas por canal manteniendo visibilidad total. También soportamos stock negativo para negocios que aceptaban pedidos mientras esperaban reposición.\n\nPara la información de productos, construimos un sistema basado en reglas. Durante la configuración, los usuarios definían reglas por producto: ¿mismo título en todos lados o específico por plataforma? ¿Precios sincronizados o independientes? Una vez configuradas, las reglas corrían solas. El sistema empezó más simple pero evolucionó cuando aprendimos que la sincronización básica no era suficiente diferenciación. El trade-off  -  más complejidad para nosotros, pero intuitivo para los usuarios. Cuando mostramos los prototipos, la mayoría lo entendió de inmediato.\n\nConstruimos soporte de multi-publicación para vendedores de MercadoLibre que mantienen varias publicaciones por producto (pago único vs. cuotas). Willow las trataba como vinculadas a una única fuente de verdad.\n\nEl migrador de productos fue una apuesta estratégica. Construimos la migración de MercadoShops a TiendaNube para capturar la ventana de la fecha límite del 31 de diciembre. El momento más destacado fue cuando migramos el catálogo completo de un cliente  -  más de 4.000 productos  -  en aproximadamente un día. El sistema fue diseñado para generalizarse a otras combinaciones de plataformas.\n\nInvertimos en manejar datos desordenados. Durante la importación, Willow cruzaba productos por SKU pero también detectaba problemas: SKUs que no coincidían, SKUs faltantes, duplicados. Generábamos reportes mostrando qué necesitaba atención y diseñamos flujos para ayudar a los usuarios a crear SKUs unificados.\n\nLa arquitectura multi-tenant reflejó las necesidades de las agencias. Múltiples usuarios por empresa, múltiples empresas por usuario, permisos granulares (Owner/Editor/Reader/Sin acceso) por sección, invitaciones por email.\n\nNo todo se priorizó igual. La integración con locales físicos y lectores de inventario quedó en el radar pero no era esencial para entrar al mercado.\n\nUna feature nos enseñó una lección importante. Construimos un dashboard de métricas personalizable porque creíamos que tendría valor. Los usuarios nos dijeron directamente que no lo estaban usando. Cortamos la inversión de inmediato. La lección: validar antes de construir, incluso cuando algo parece obvio  -  eso me quedó grabado.",
+          execution:
+            "Mi rol abarcó estrategia de producto, desarrollo front-end y coordinación cross-funcional.\n\nMi principal desafío era traducir complejidad técnica en interfaces simples. El sistema de reglas, los permisos multi-tenant, los procesos de sincronización asíncrona  -  técnicamente intrincados, pero los usuarios no tenían que sentir esa complejidad. Construí el front-end con ese principio como guía, validando flujos con prototipos antes de comprometer esfuerzo de ingeniería.\n\nLa validación era continua. Sesiones de feedback regulares con usuarios, prospectos y agencias moldeaban las prioridades semana a semana. El error del dashboard de métricas ocurrió porque saltamos la validación  -  asumimos valor en lugar de probarlo. Escuchar a los usuarios decir que no lo usaban hizo que depriorizarlo fuera una decisión fácil.\n\nAnte datos desorganizados en producción, nos adaptamos rápido. Construimos automatizaciones de detección y reportes de limpieza. Esa capacidad de respuesta  -  resolver problemas reales en lugar de seguir el roadmap rígidamente  -  se convirtió en nuestra forma de operar.\n\nCoordiné un equipo de desarrollo externo a través de reuniones semanales. Esa relación tuvo sus fricciones: brechas de velocidad, problemas de accountability. En retrospectiva, establecería contratos más claros, hitos explícitos y mayor seguimiento desde el inicio.\n\nTambién construí los sistemas operativos internos: planificación semanal, documentación, materiales de onboarding, plantillas para propuestas y reportes, procesos de ventas estandarizados. No es lo más glamoroso, pero es esencial para un equipo pequeño moviéndose rápido.\n\nTrabajé con diseñadores en la identidad de marca, con legales y contabilidad en la constitución de la empresa, y colaboré en todas las áreas del negocio como co-founder.\n\nPresentamos ante inversores. Nuestra estrategia de precios  -  por debajo de competidores para entrar al mercado, planes escalonados con pricing por usuario para expandir  -  fue cuestionada pero defendida con éxito. Ganamos un concurso de pitching en una universidad argentina. A pesar de la buena recepción, no cerramos la inversión que necesitábamos para escalar.",
+          results:
+            'Adquirimos clientes pagos, incluyendo un retailer cuyo catálogo de más de 4.000 SKUs migramos en un día. Construimos una plataforma funcional con usuarios reales y validamos demanda a través de conversaciones continuas. Ganamos un concurso de pitching universitario y presentamos ante inversores, defendiendo nuestro modelo aunque no cerramos financiamiento.\n\nDespués de 14 meses, cerramos. Factores que contribuyeron: la intensidad de capital para competir contra players establecidos, la imposibilidad de levantar funding, la divergencia en el nivel de compromiso entre co-founders, y los desafíos con el equipo externo de desarrollo.\n\nQué haría distinto:\n\nValidar más antes de construir. El dashboard de métricas parecía obvio  -  lo construimos sin suficiente señal de que los usuarios lo querían. Más conversaciones y experimentos más pequeños habrían ahorrado ese esfuerzo.\n\nScopear aún más chico. Fuimos iterativos, pero algunos releases podrían haber sido más acotados para obtener feedback más rápido.\n\nTratar los equipos externos como dependencias críticas. Contratos más claros y accountability estructurado habrían hecho saltar los problemas antes.\n\nTener conversaciones de alineación más temprano. Las brechas de compromiso entre co-founders solo afloraron al enfrentar una decisión importante. Empujaría por conversaciones explícitas sobre escenarios hipotéticos mucho antes.\n\nDefender el foco a rajatabla. Algunas features diluyeron la atención del valor core. Más disciplina alrededor del "todavía no" nos habría mantenido más afilados.',
         },
         {
           id: 2,
           image: "/case2.jpg",
-          title: "[CASO_2_TITULO]",
-          summary: "[CASO_2_RESUMEN]",
-          problem: "[CASO_2_PROBLEMA]",
-          hypothesis: "[CASO_2_HIPOTESIS]",
-          proposal: "[CASO_2_PROPUESTA]",
-          metrics: "[CASO_2_METRICAS]",
+          title: "Marketplace de Desarrollos Inmobiliarios de Lujo",
+          summary:
+            "Lideré la definición de producto para una plataforma de generación de leads inmobiliarios  -  transformando una visión ambigua en una especificación completa de proyecto que incluía requerimientos, arquitectura técnica, plan de analítica y roadmap de desarrollo.",
+          problem:
+            'Dos socios de negocio  -  uno dueño de una cadena retail importante en Argentina, el otro con una agencia inmobiliaria en Miami  -  querían construir una plataforma digital para capturar y calificar leads de desarrollos inmobiliarios de lujo en Miami, Punta del Este y Buenos Aires.\n\nSu modelo de negocio era claro: tenían muchos contactos con desarrolladores, pero necesitaban una forma escalable de atraer compradores potenciales, calificarlos antes de invertir tiempo de ventas, y convertir a los mejores prospectos en clientes. La plataforma mostraría desarrollos en curso, permitiría filtrar por ubicación, tipo de unidad, amenities y rango de precio, y llevaría a los visitantes interesados a un flujo de calificación antes de que ocurriera cualquier conversación humana.\n\nEl desafío no era la idea de negocio. Era que no tenían ninguna imagen clara de cómo debía verse o funcionar el producto. Sabían que querían "un marketplace para conseguir leads." Todo lo demás  -  flujos de usuario, features, requerimientos técnicos, proceso de calificación, integraciones  -  estaba indefinido. Eran ejecutivos ocupados con disponibilidad limitada para reuniones de alineación, pero cada detalle requería su input.',
+          discovery:
+            'Mi rol era tomar ese concepto en bruto y convertirlo en algo que un equipo de desarrollo pudiera construir  -  y eso significaba extraer claridad de stakeholders que no podían articular lo que querían.\n\nEl proceso de discovery se extendió aproximadamente seis semanas de reuniones semanales. No eran sesiones típicas de requerimientos donde el cliente te entrega una spec. Tuve que estructurar conversaciones para extraer su visión pieza por pieza. La técnica más efectiva fue pedir ejemplos: ¿qué plataformas existentes les gustaban? ¿Qué aspectos específicos les atraían? Reaccionar a referencias concretas era mucho más productivo que discutir features en abstracto. Documenté todo en Google Docs compartidos, construyendo una biblioteca de patrones y preferencias a la que podíamos volver.\n\nA través de esas conversaciones, el scope del producto fue tomando forma. El marketplace necesitaba soportar tres mercados (Miami, Buenos Aires, Punta del Este) con desarrollos filtrables por ubicación, barrio, precio, estado de construcción y amenities. Cada proyecto tendría una página detallada con renders, videos, planos, mapas y opciones de contacto. Los administradores necesitaban un back-office para crear y gestionar listings, controlar posicionamientos destacados y reordenar contenido manualmente.\n\nPero el marketplace era solo la puerta de entrada. El valor real estaba en la calificación de leads. Cuando un usuario expresaba interés, entraba a un flujo por WhatsApp potenciado por un bot de IA que hacía preguntas de pre-calificación  -  presupuesto, zona preferida, tipo de propiedad, plazo, etc. Los leads calificados recibirían una oferta para reservar una reunión; los no calificados serían manejados de otra forma. Cada interacción fluiría hacia un CRM con contexto completo, para que las conversaciones de ventas empezaran informadas.\n\nEsto implicaba integraciones con WhatsApp Business, un orquestador de workflows como n8n, un CRM (HubSpot o Pipedrive), reserva de calendario (Calendly) y servicios de mapas. Más infraestructura de analítica para medir el funnel completo desde la visita hasta el cierre.\n\nPara validar la dirección antes de cualquier desarrollo, construí prototipos rápidos con V0. Eso nos permitió testear ideas visualmente e iterar según las reacciones de los stakeholders. Después de cientos de iteraciones  -  ajustando layouts, flujos, interacciones  -  llegamos a una versión donde ambos socios dijeron "esto es lo que queremos."',
+          solution:
+            "Una vez que tuvimos alineación, traduje todo en documentación estructurada contra la cual el equipo pudiera ejecutar.\n\nPropuesta de desarrollo: Escribí la especificación completa del proyecto  -  scope funcional dividido por roles de usuario (visitante, usuario registrado, admin), requerimientos detallados de features, scope de UX/UI, proceso de QA, términos comerciales, timeline y proceso de gestión de cambios. Este documento se convirtió en el contrato que definía qué se construiría y qué quedaba explícitamente fuera de scope.\n\nArquitectura técnica: Junto con el desarrollador, definimos el stack y las decisiones de infraestructura, plasmándolo en un documento claro. Next.js para el front-end, NestJS para la capa de API, PostgreSQL para datos, S3 para almacenamiento de media, Docker para el deployment en un VPS. Cada decisión fue documentada con su justificación  -  balanceando velocidad de salida al mercado, mantenibilidad y costo. También scopeé qué quedaba deliberadamente fuera del MVP para mantener la complejidad y las expectativas bajo control.\n\nPlan de analítica: Diseñé el framework de medición  -  definiendo el funnel de conversión desde la visita, pasando por la calificación del lead, la asistencia a la reunión y el resultado final. Especifiqué qué eventos trackear, cómo fluirían a GA4, qué pixels de publicidad conectar, y cómo los datos del CRM y el calendario retroalimentarían la analítica. El entregable incluía un protocolo de testing y documentación para el equipo de marketing del cliente.\n\nRoadmap de desarrollo: Estructuré el backlog en Jira con epics que cubrían la experiencia del marketplace, los flujos de captura de leads, el sistema de calificación por IA, la integración con el CRM, la funcionalidad de calendario y la administración del back-office. Cada epic se desglosó en user stories con criterios de aceptación suficientemente detallados para que el desarrollador pudiera trabajar de forma independiente.\n\nScope de servicios adicionales: También documenté add-ons opcionales fuera del MVP core  -  analítica expandida, integraciones adicionales, soporte para migración de contenido  -  con precios separados, para que el cliente entendiera qué estaba incluido y qué requeriría inversión adicional.\n\nEl equipo era pequeño: un desarrollador, un diseñador, los dos stakeholders, yo, y otra persona de soporte. Con recursos limitados y stakeholders de disponibilidad impredecible, la documentación exhaustiva era esencial. Cada especificación tenía que poder sostenerse sola.",
+          execution:
+            "Para cuando me retiré del proyecto en diciembre de 2025, había entregado la definición de producto completa: prototipos validados, propuesta de desarrollo, arquitectura técnica, plan de analítica y un backlog estructurado en Jira. El desarrollo backend había comenzado sobre la base de mis especificaciones. El proyecto continuó hacia su lanzamiento de MVP previsto para principios de 2026.\n\nMe alejé porque el engagement requería un nivel de flexibilidad ante cambios de scope y disponibilidad de stakeholders que no era sostenible junto a mis otros compromisos. Reconocer eso y salir de forma ordenada  -  con documentación exhaustiva para que el proyecto pudiera continuar  -  fue la decisión correcta.",
+          results:
+            'Lo que me llevé de esta experiencia:\n\nLa estructura extrae claridad de la ambigüedad. Cuando los stakeholders no pueden articular lo que quieren, pedir ejemplos y referencias funciona mejor que pedir requerimientos. La gente reacciona a opciones concretas con mucha más facilidad de lo que genera especificaciones abstractas.\n\nProtoipá antes de especificar. Construir prototipos visuales rápidos ahorró semanas de potencial desalineación. Iterar sobre un prototipo en V0 es mucho más barato que reescribir un backlog en Jira  -  o peor, código en producción.\n\nLa documentación es un entregable, no un overhead. La propuesta, el documento de arquitectura y el plan de analítica no eran solo artefactos internos  -  eran el resultado de mi trabajo. Con un equipo pequeño y stakeholders ocupados, esos documentos habilitaban la ejecución sin que yo tuviera que estar en cada conversación.\n\nScopea el sistema completo, no solo la interfaz. Lo que parecía "un marketplace" era en realidad un motor de calificación de leads con integración de CRM, workflows de IA, infraestructura de analítica y herramientas de administración. Mapear el sistema completo desde el inicio evitó sorpresas más adelante.\n\nSaber cuándo dar un paso al costado. El proyecto era viable, pero la dinámica del engagement no era sostenible para mí. Salir de forma profesional  -  con todo documentado y transferido  -  preservó las relaciones y permitió que el trabajo continuara.',
         },
         {
           id: 3,
           image: "/case3.jpg",
-          title: "[CASO_3_TITULO]",
-          summary: "[CASO_3_RESUMEN]",
-          problem: "[CASO_3_PROBLEMA]",
-          hypothesis: "[CASO_3_HIPOTESIS]",
-          proposal: "[CASO_3_PROPUESTA]",
-          metrics: "[CASO_3_METRICAS]",
+          title: "Trape",
+          summary:
+            "Definí por completo una plataforma P2P de intercambio de NFTs  -  del análisis de mercado a la arquitectura técnica  -  y con esa claridad, decidí no construirla.",
+          problem:
+            'Todo empezó con un problema propio: quería intercambiar un NFT directamente por otro, y no había forma segura de hacerlo.\n\nPara entender por qué esto es difícil, un poco de contexto. Los NFTs son activos digitales únicos almacenados en una blockchain  -  se pueden pensar como objetos de colección, pero digitales y verificables. A diferencia de la moneda común, no se puede simplemente "intercambiar" dos NFTs en una sola acción. Cada transferencia es una transacción separada. Eso crea un problema de confianza: si mando mi NFT primero, podrían simplemente no mandarme el suyo. No hay botón de deshacer en una blockchain.\n\nLas opciones disponibles eran todas malas. Podía vender mi NFT por criptomonedas y usarlas para comprar el NFT del otro  -  pero eso introduce riesgo de fluctuación de precio, comisiones de plataforma y requiere que ambos coordinemos el timing. O podía intentar coordinar el intercambio por mensajes directos, lo que significaba confiar en que un desconocido enviara su activo primero (riesgoso), o encontrar un intermediario de confianza en alguna comunidad  -  típicamente un moderador  -  para que retuviera ambos activos y ejecutara el swap (lento y tedioso). De cualquier forma, lo que debería ser un intercambio simple se convertía en un proceso manual y lento, dependiente de la disponibilidad y buena voluntad de otras personas.\n\nNo era solo mi problema. Soy parte de varias comunidades de NFTs, y seguía viendo el mismo patrón: gente queriendo intercambiar, pidiendo a moderadores que intermediaran, esperando que alguien de confianza estuviera online. La fricción era evidente, y parecía algo que una plataforma podía resolver.\n\nLas plataformas grandes lo habían intentado. OpenSea, el marketplace de NFTs más grande, lanzó una feature llamada Deals que permitía swaps directos. Pero la discontinuaron en una actualización de 2024  -  citando uso insuficiente para justificar el mantenimiento. Otras plataformas dedicadas a swaps habían surgido a lo largo de los años, pero o cerraron, o fueron hackeadas, o cayeron en irrelevancia. Hasta donde pude encontrar, ninguna seguía operando activamente.\n\nEl mercado había abandonado los swaps directos de NFTs. Pero la necesidad no había desaparecido.',
+          marketAnalysis:
+            "Antes de diseñar nada, investigué por qué las soluciones en este espacio seguían fallando.\n\nAnalicé cada plataforma que había intentado swaps P2P de NFTs: qué ofrecían, qué les pasó y qué podía aprender de su trayectoria.\n\nEl patrón era consistente. Las plataformas o abandonaban la feature porque el uso era demasiado bajo para justificar el costo de mantenimiento, o eran comprometidas por vulnerabilidades de seguridad que hacían que los usuarios perdieran sus activos. OpenSea tenía los datos  -  millones de usuarios  -  y decidió que la feature no valía la pena mantener. Otras plataformas dedicadas sufrieron exploits que drenaron activos de usuarios y destruyeron la confianza de un día para el otro. El resto simplemente dejó de operar con el tiempo. Para cuando hice esta investigación, no podía encontrar una sola plataforma confiable y activa que ofreciera swaps directos de NFTs.\n\nEste análisis me dijo varias cosas. Primero, había un gap genuino: no existía ninguna plataforma activa para swaps directos que pudiera manejar NFTs más tokens en una sola transacción. Segundo, el espacio tenía riesgos reales  -  los fallos de seguridad no son recuperables cuando estás manejando activos de otras personas. Tercero, el tamaño del mercado era incierto. Mi frustración personal era real, la demanda de la comunidad que había observado era real, pero la decisión de OpenSea sugería que incluso entre millones de usuarios de NFTs, el subconjunto que quería swaps directos podría ser demasiado pequeño para construir un producto sostenible.\n\nLa oportunidad existía, pero venía con señales de alerta importantes.",
+          productSpecification:
+            'Decidí desglosar el producto por completo antes de escribir una sola línea de código  -  tratando la especificación en sí misma como una forma de pensar si esto valía la pena construir.\n\nEl concepto era directo: una plataforma donde una persona crea una oferta ("te doy este NFT más estos tokens por ese NFT"), se la envía a una contraparte específica, y si la acepta, el swap se ejecuta automáticamente  -  ambos lados del intercambio ocurren juntos, así que o el intercambio completo se completa o no pasa nada. Sin necesidad de confianza, sin intermediario reteniendo activos.\n\nDocumenté todo lo que necesitaría para construirlo yo mismo.\n\nPara el producto, definí el scope del MVP explícitamente: qué estaba incluido (crear, aceptar y cancelar ofertas; expiración automática; seguimiento claro de estado) y qué quedaba deliberadamente excluido (subastas, listings públicos, sistemas de reputación). Planeé fees mínimos  -  solo suficientes para cubrir costos de hosting e infraestructura, no como modelo de revenue. Mantener la primera versión enfocada me permitiría validar si alguien realmente lo usaba antes de invertir en complejidad.\n\nMapeé los flujos de usuario de punta a punta: cómo alguien conectaría su wallet, seleccionaría activos, crearía una oferta, la compartiría con una contraparte, y qué vería esa contraparte al revisar y aceptar. Especifiqué los estados en los que podía estar una oferta (activa, aceptada, cancelada, expirada) y escribí los mensajes para cada escenario  -  confirmaciones de éxito, explicaciones de errores, casos borde.\n\nPara el lado técnico, tomé decisiones de arquitectura: lanzar primero en Abstract (una red más nueva con menor fricción y buenas herramientas para desarrolladores), qué tecnologías usar para el front-end, y cómo deberían estructurarse los smart contracts. Documenté patrones de seguridad esenciales  -  formas de prevenir vulnerabilidades comunes que habían afectado a otras plataformas.\n\nTambién creé una identidad de marca completa. El nombre Trape (una fusión de "trade" con un sonido distintivo), un sistema visual con colores y tipografía, lineamientos de mensajería, e incluso una nota de pronunciación ya que el nombre no es obvio. Puede parecer prematuro para algo que no se construyó, pero quería ver si podía visualizar el producto como algo real y coherente.\n\nFinalmente, definí criterios de éxito (qué métricas indicarían que el MVP estaba funcionando) y definí un roadmap de cómo el producto podría evolucionar en múltiples fases si ganaba tracción.\n\nEl ejercicio fue valioso en sí mismo. Para cuando terminé, tenía un blueprint completo contra el cual construir  -  y una imagen mucho más clara de lo que hacerlo realmente requeriría.',
+          buildDecision:
+            'Con el desgloce completo, tenía que decidir: ¿lo construyo?\n\nDecidí que no  -  por razones que se volvieron claras a través del proceso de especificar el producto.\n\nEl problema fundamental era el riesgo de seguridad. El núcleo de este producto es un smart contract que retiene los activos de los usuarios durante un swap. Si hay una vulnerabilidad en ese contrato, los usuarios pierden sus NFTs. Esto no es teórico  -  es exactamente lo que le había pasado a otras plataformas en el espacio. A diferencia de un bug en un sitio web que podés parchear y por el que podés disculparte, un exploit de smart contract en una blockchain pública es frecuentemente permanente e irreversible.\n\nPlaneaba construir esto yo mismo usando herramientas de coding asistido por IA  - "vibe coding." Soy capaz de construir el front-end, la interfaz de usuario, los flujos. Pero escribir smart contracts seguros que manejen activos valiosos requiere una expertise profunda que no tengo. Los asistentes de IA pueden generar código Solidity que parece correcto, pero "parece correcto" no es suficiente cuando los coleccionables valiosos de alguien están en juego. Las vulnerabilidades sutiles son exactamente lo que los auditores experimentados cobran por encontrar, y las herramientas de IA pueden introducirlas tan fácilmente como pueden escribir código funcional.\n\nConsideré alternativas. Podía pagar por una auditoría de seguridad profesional antes de lanzar. Pero las auditorías cuestan dinero real  -  frecuentemente miles de dólares  -  para un proyecto personal que podría tener una base de usuarios pequeña. Los fees que había planeado eran solo para cubrir costos de infraestructura, no para financiar una inversión inicial significativa. La economía no cerraba.\n\nTambién estaba la señal del mercado a considerar. OpenSea no es una operación pequeña  -  tienen datos de millones de usuarios y equipos de producto profesionales. Concluyeron que los swaps directos no valían la pena mantener. Mi frustración personal con el problema era genuina, la necesidad de la comunidad que había observado era genuina, pero tenía que ser honesto: eso podría seguir representando un nicho demasiado pequeño.\n\nY había una dimensión personal. Si lanzaba un producto con una vulnerabilidad y alguien perdía sus activos, eso iba a caer sobre mí. El riesgo reputacional y el peso ético de potencialmente causar daño a usuarios no era algo que podía tomar a la ligera, especialmente para un proyecto que estaba construyendo principalmente para mí y otros como yo.\n\nLa decisión responsable era parar. Prefiero tener una especificación completa guardada en una carpeta que un producto en vivo que pone a los usuarios en riesgo.',
+          learnings:
+            "Documentar antes de construir es una herramienta de pensamiento, no solo de ejecución. El proceso de diseñar Trape por completo  -  desde el análisis de mercado hasta la arquitectura técnica  -  me forzó a enfrentar preguntas que podría haber pasado por alto si hubiera saltado directo al código. Para cuando terminé, la decisión de no construir era clara. La documentación había cumplido su función aunque no se escribiera ningún código.\n\nSaber cuándo no construir es una habilidad de producto. Existe un sesgo hacia la acción  -  lanzar rápido, aprender haciendo, iterar. Eso funciona para muchos productos. Pero algunos productos tienen perfiles de riesgo donde lanzar prematuramente puede causar daño real. Reconocer en qué categoría estás, y tener la disciplina de parar cuando los riesgos superan tu capacidad de manejarlos, es algo subvalorado.\n\nEl dolor de la comunidad no es validación automática de mercado. Genuinamente quería que Trape existiera. Yo lo usaría. Gente en mis comunidades lo usaría. Pero la frustración personal puede hacer que un problema parezca más grande de lo que es. La decisión de OpenSea de discontinuar su feature de swaps fue un dato que tuve que tomar en serio  -  ellos sabían algo sobre el comportamiento real de los usuarios a escala que mi experiencia personal no podía decirme.\n\nLas restricciones de seguridad cambian el juego. En el desarrollo web típico, el peor caso suele ser un bug que molesta a los usuarios o causa algo de downtime. En el desarrollo de smart contracts que manejan activos, el peor caso es que la gente pierda dinero sin vuelta atrás. Esa asimetría importa. Ser honesto sobre si tus habilidades y recursos están a la altura del perfil de riesgo de tu producto es esencial  -  especialmente cuando construís solo con herramientas de IA.\n\nEl trabajo no se pierde. La especificación existe. Si las circunstancias cambian  -  si las herramientas de smart contracts se vuelven lo suficientemente confiables como para fiarme del desarrollo asistido por IA en código crítico de seguridad, o si encuentro un colaborador con la expertise correcta  -  tengo un blueprint completo listo para ejecutar. Y de todas formas, el pensamiento que hice se transfiere a otros productos y problemas.",
         },
       ],
       labels: {
         problem: "Problema",
+        discovery: "Discovery",
+        solution: "Solución",
+        execution: "Ejecución",
+        results: "Resultados",
+        marketAnalysis: "Análisis de mercado",
+        productSpecification: "Especificación de producto",
+        buildDecision: "Decisión final",
+        learnings: "Aprendizajes",
         hypothesis: "Hipótesis",
         proposal: "Propuesta",
         metrics: "Métricas",
@@ -253,27 +294,33 @@ export const content = {
 
     // Key Decisions & Trade-offs Section
     impact: {
-      title: "Decisiones Clave y Compromisos",
+      title: "La lógica detrás de las decisiones",
       decisions: [
         {
-          title: "[DECISION_1_TITULO]",
-          description: "[DECISION_1_DESCRIPCION]",
-          tradeoff: "[TRADEOFF_1]",
+          title: "Estructura para decidir, no para frenar",
+          description:
+            "Ante la incertidumbre, no esperé tener todas las respuestas. Construí frameworks y árboles de decisión para avanzar con criterio  -  y los ajusté cuando la realidad los desafió.",
+          tradeoff:
+            "Avanzar sin certeza implica asumir riesgos. Pero quedarse quieto esperando información perfecta tiene un costo mayor.",
         },
         {
-          title: "[DECISION_2_TITULO]",
-          description: "[DECISION_2_DESCRIPCION]",
-          tradeoff: "[TRADEOFF_2]",
+          title: "Un prototipo vale más que mil reuniones",
+          description:
+            "Las personas rara vez saben lo que necesitan hasta que tienen algo concreto frente a ellas. Usé mockups rápidos para hacer visible lo invisible  -  y descubrir los requisitos reales antes de comprometer tiempo y recursos.",
+          tradeoff: "Más trabajo al inicio. Menos sorpresas al final.",
         },
         {
-          title: "[DECISION_3_TITULO]",
-          description: "[DECISION_3_DESCRIPCION]",
-          tradeoff: "[TRADEOFF_3]",
+          title: "Documentación como alineación, no como burocracia",
+          description:
+            "Arquitectura técnica completa, planes de analytics y backlogs estructurados antes de escribir una sola línea de código. No porque el proceso lo exija  -  sino porque la ambigüedad se multiplica cuando cada uno trabaja desde una versión distinta de la verdad.",
+          tradeoff: "Arranques más lentos. Todo lo demás, más rápido.",
         },
         {
-          title: "[DECISION_4_TITULO]",
-          description: "[DECISION_4_DESCRIPCION]",
-          tradeoff: "[TRADEOFF_4]",
+          title: "A veces, la mejor decisión de producto es no construir",
+          description:
+            "En Trape, tras un análisis profundo identifiqué vulnerabilidades de seguridad sin solución viable. La conclusión fue clara: no había producto que valiera la pena lanzar en esas condiciones. Decidí no construirlo.",
+          tradeoff:
+            "Sin producto lanzado. Pero proteger a los usuarios finales siempre va a pesar más que cumplir un milestone.",
         },
       ],
     },
@@ -283,28 +330,36 @@ export const content = {
       title: "Experiencia",
       philosophy: {
         title: "Mi Filosofía de Producto",
-        beliefs: ["[CREENCIA_1]", "[CREENCIA_2]", "[CREENCIA_3]"],
+        beliefs: [
+          "El problema primero, las soluciones después  -  primero hay que entender el problema real.",
+          "Ejecutar enseña más que planificar  -  un prototipo que funciona vale más que un documento perfecto.",
+          "Decir que no también es decidir  -  el foco no aparece solo, hay que elegirlo.",
+        ],
       },
       experience: [
         {
-          role: "[PUESTO_1]",
-          company: "[EMPRESA_1]",
-          description: "[DESCRIPCION_1]",
+          role: "Co-Founder & Product Lead",
+          company: "Willow",
+          description:
+            "Willow nació de un problema real: los retailers que venden en múltiples canales pierden horas gestionando inventario, datos de productos y precios a mano, en plataformas que no se hablan entre sí. Tuve a cargo el discovery, la priorización, el desarrollo front-end y el GTM. Me senté con usuarios reales a desenredar flujos de trabajo más complicados de lo esperado, construí un sistema de sincronización configurable que tenía que manejar datos limpios y datos sucios con igual eficiencia, y mantuve alineado a un equipo de desarrollo externo semana a semana. Llegamos a clientes que pagaban y cerramos a los 14 meses - el caso de estudio cubre qué construimos, qué funcionó y qué haría distinto.",
         },
         {
-          role: "[PUESTO_2]",
-          company: "[EMPRESA_2]",
-          description: "[DESCRIPCION_2]",
+          role: "Digital Marketing & Sales Diligence Analyst",
+          company: "CRISIL",
+          description:
+            "Trabajé con un equipo de un private equity de Nueva York, analizando compañías portfolio y potenciales adquisiciones. El trabajo era convertir datos digitales dispersos  -  tráfico, share of voice, señales de demanda  -  en una imagen clara de dónde estaba cada empresa frente a sus competidores. Cada output terminaba como un entregable listo para stakeholders: conciso, con punto de vista propio, y pensado para personas que toman decisiones de inversión, no para quienes quieren excavar planillas ellos mismos.",
         },
         {
-          role: "[PUESTO_3]",
-          company: "[EMPRESA_3]",
-          description: "[DESCRIPCION_3]",
+          role: "Co-Founder & Growth Lead",
+          company: "Vellicity",
+          description:
+            "Armé una agencia de growth para pymes en Australia junto a un co-founder. Gestioné cuentas de clientes de punta a punta  -  desde la primera llamada hasta las revisiones de performance  -  mientras construía los sistemas que mantenían la entrega consistente a medida que escalábamos: flujos de onboarding, templates, procesos de delivery. Interfuncional desde el día uno  -  clientes y diseñadores todo en simultáneo.",
         },
         {
-          role: "[PUESTO_4]",
-          company: "[EMPRESA_4]",
-          description: "[DESCRIPCION_4]",
+          role: "Marketing Analyst",
+          company: "Agencia Empuje",
+          description:
+            "Mi primer trabajo en agencia, llevando varias cuentas de e-commerce en paralelo. Paid media, CRO, análisis competitivo  -  pero lo que más me quedó fue aprender a traducir lo que un cliente dice que quiere en algo que un equipo puede realmente ejecutar. Mirando atrás, estaba operando como PM antes de saber que era eso lo que quería hacer.",
         },
       ],
     },
@@ -312,17 +367,25 @@ export const content = {
     // Contact Section
     contact: {
       title: "Hablemos",
-      message: "[MENSAJE_CONTACTO]",
-      linkedin: "[URL_LINKEDIN]",
-      email: "[CORREO]",
+      message:
+        "Abierto a roles de PM, growth y estrategia - sobre todo en equipos que actúan rápido y piensan en grande.",
+      linkedin: "https://www.linkedin.com/in/pedro-pla1/",
+      email: "plapedro@outlook.com",
+      emailModal: {
+        title: "Contacto",
+        copied: "¡Copiado!",
+        copyAddress: "Copiar dirección",
+        openMailApp: "Abrir app de correo",
+        close: "Cerrar",
+      },
     },
 
     // Footer
     footer: {
-      copyright: `© ${new Date().getFullYear()} [TU_NOMBRE]. Todos los derechos reservados.`,
+      copyright: `© ${new Date().getFullYear()} Pedro Pla. Todos los derechos reservados.`,
       social: {
-        linkedin: "[URL_LINKEDIN]",
-        email: "[CORREO]",
+        linkedin: "https://www.linkedin.com/in/pedro-pla1/",
+        email: "plapedro@outlook.com",
       },
     },
   },

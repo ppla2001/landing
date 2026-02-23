@@ -15,9 +15,17 @@ const EmailModalContext = createContext<EmailModalContextType | undefined>(
 function EmailModalContent({
   email,
   onClose,
+  labels,
 }: {
   email: string;
   onClose: () => void;
+  labels: {
+    title: string;
+    copied: string;
+    copyAddress: string;
+    openMailApp: string;
+    close: string;
+  };
 }) {
   const [copied, setCopied] = useState(false);
 
@@ -54,12 +62,12 @@ function EmailModalContent({
     >
       <div className="flex items-center justify-between gap-6 mb-5">
         <h3 className="text-xl font-semibold text-neutral-900 dark:text-white">
-          Get in touch
+          {labels.title}
         </h3>
         <button
           onClick={onClose}
           className="p-1.5 -m-1.5 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg transition-colors flex-shrink-0 text-neutral-600 dark:text-neutral-400 text-2xl leading-none font-light"
-          aria-label="Close"
+          aria-label={labels.close}
         >
           ×
         </button>
@@ -88,7 +96,7 @@ function EmailModalContent({
                 />
               </svg>
               <span className="text-sm font-medium text-accent-600 dark:text-accent-400">
-                Copied!
+                {labels.copied}
               </span>
             </>
           ) : (
@@ -107,7 +115,7 @@ function EmailModalContent({
                 />
               </svg>
               <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
-                Copy address
+                {labels.copyAddress}
               </span>
             </>
           )}
@@ -134,7 +142,7 @@ function EmailModalContent({
             />
           </svg>
           <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
-            Open mail app
+            {labels.openMailApp}
           </span>
         </motion.a>
       </div>
@@ -181,6 +189,7 @@ export function EmailModalProvider({
               <EmailModalContent
                 email={t.contact.email}
                 onClose={closeEmailModal}
+                labels={t.contact.emailModal}
               />
             </motion.div>
           </motion.div>

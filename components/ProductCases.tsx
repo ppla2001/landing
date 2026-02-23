@@ -104,15 +104,15 @@ function CaseDetailModal({ caseItem, onClose, labels }: CaseDetailModalProps) {
             <div className="space-y-6 pt-4">
               {[
                 { heading: labels.problem, content: caseItem.problem },
-                { heading: "Discovery", content: caseItem.discovery },
-                { heading: "Market Analysis", content: caseItem.marketAnalysis },
+                { heading: labels.discovery, content: caseItem.discovery },
+                { heading: labels.marketAnalysis, content: caseItem.marketAnalysis },
                 { heading: labels.hypothesis, content: caseItem.hypothesis },
-                { heading: "Product Specification", content: caseItem.productSpecification },
-                { heading: "Solution", content: caseItem.solution },
-                { heading: "Execution", content: caseItem.execution },
-                { heading: "Build Decision", content: caseItem.buildDecision },
-                { heading: "Results", content: caseItem.results },
-                { heading: "Learnings", content: caseItem.learnings },
+                { heading: labels.productSpecification, content: caseItem.productSpecification },
+                { heading: labels.solution, content: caseItem.solution },
+                { heading: labels.execution, content: caseItem.execution },
+                { heading: labels.buildDecision, content: caseItem.buildDecision },
+                { heading: labels.results, content: caseItem.results },
+                { heading: labels.learnings, content: caseItem.learnings },
                 { heading: labels.proposal, content: caseItem.proposal },
                 { heading: labels.metrics, content: caseItem.metrics },
               ]

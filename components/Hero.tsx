@@ -3,6 +3,8 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
 
+const basePath = "/landing";
+
 export default function Hero() {
   const { t } = useLanguage();
 
@@ -102,23 +104,32 @@ export default function Hero() {
               
               {/* Main photo container - Progressive sizing */}
               <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-[420px] xl:h-[420px] rounded-3xl bg-gradient-to-br from-accent-100 via-accent-200 to-accent-300 dark:from-accent-900 dark:via-accent-800 dark:to-accent-700 flex items-center justify-center overflow-hidden shadow-2xl border border-white/20 dark:border-neutral-800/50 backdrop-blur-sm transition-all duration-300">
+                {t.hero.image ? (
+                  <img
+                    src={basePath + t.hero.image}
+                    alt={t.hero.name}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                ) : null}
                 {/* Inner glow */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent" />
                 
                 {/* Photo placeholder icon - scales with container */}
-                <div className="relative z-10 text-accent-600 dark:text-accent-300">
-                  <svg
-                    className="w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 xl:w-56 xl:h-56 transition-all duration-300"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </div>
+                {!t.hero.image && (
+                  <div className="relative z-10 text-accent-600 dark:text-accent-300">
+                    <svg
+                      className="w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 xl:w-56 xl:h-56 transition-all duration-300"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                )}
 
                 {/* Decorative elements */}
                 <div className="absolute top-2 right-2 sm:top-3 sm:right-3 md:top-4 md:right-4 w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 bg-accent-500/50 rounded-full animate-pulse" />

@@ -5,7 +5,7 @@ export const content = {
       name: "Pedro Pla",
       links: [
         { label: "Product Cases", href: "#cases" },
-        { label: "Impact", href: "#impact" },
+        { label: "Process", href: "#impact" },
         { label: "Background", href: "#background" },
         { label: "Contact", href: "#contact" },
       ],
@@ -201,7 +201,7 @@ export const content = {
       name: "Pedro Pla",
       links: [
         { label: "Casos de Producto", href: "#cases" },
-        { label: "Impacto", href: "#impact" },
+        { label: "Proceso", href: "#impact" },
         { label: "Experiencia", href: "#background" },
         { label: "Contacto", href: "#contact" },
       ],

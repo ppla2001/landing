@@ -3,6 +3,29 @@
 import { useState, useEffect, useRef } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
+import ReadTime from "./ReadTime";
+
+const CASE_CONTENT_FIELDS = [
+  "summary",
+  "problem",
+  "discovery",
+  "solution",
+  "execution",
+  "results",
+  "marketAnalysis",
+  "productSpecification",
+  "buildDecision",
+  "learnings",
+  "hypothesis",
+  "proposal",
+  "metrics",
+] as const;
+
+function getCaseStudyContent(caseItem: Record<string, unknown>): string {
+  return CASE_CONTENT_FIELDS.map((key) => caseItem[key])
+    .filter((v): v is string => typeof v === "string")
+    .join(" ");
+}
 
 const basePath = "/landing";
 
@@ -14,7 +37,9 @@ interface CaseDetailModalProps {
 
 function CaseDetailModal({ caseItem, onClose, labels }: CaseDetailModalProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const rafRef = useRef<number | null>(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -27,6 +52,16 @@ function CaseDetailModal({ caseItem, onClose, labels }: CaseDetailModalProps) {
   const handleScroll = () => {
     const el = scrollRef.current;
     setShowScrollTop(el ? el.scrollTop > 100 : false);
+
+    if (rafRef.current !== null) return;
+    rafRef.current = requestAnimationFrame(() => {
+      rafRef.current = null;
+      if (!el) return;
+      const { scrollTop, scrollHeight, clientHeight } = el;
+      const maxScroll = scrollHeight - clientHeight;
+      const progress = maxScroll > 0 ? (scrollTop / maxScroll) * 100 : 0;
+      setScrollProgress(progress);
+    });
   };
 
   const scrollToTop = () => {
@@ -50,6 +85,16 @@ function CaseDetailModal({ caseItem, onClose, labels }: CaseDetailModalProps) {
           className="relative glass dark:glass-dark rounded-3xl max-w-3xl w-full max-h-[90vh] shadow-2xl border border-white/20 dark:border-white/10 overflow-hidden"
           onClick={(e) => e.stopPropagation()}
         >
+          {/* Reading progress bar - fixed at top of modal */}
+          <div
+            className="absolute top-0 left-0 right-0 h-1 z-10 bg-neutral-200/80 dark:bg-neutral-700/80 rounded-t-3xl overflow-hidden"
+            aria-hidden
+          >
+            <div
+              className="h-full bg-accent-500 dark:bg-accent-400 transition-[width] duration-75 ease-out"
+              style={{ width: `${scrollProgress}%` }}
+            />
+          </div>
           <div
             ref={scrollRef}
             onScroll={handleScroll}
@@ -85,9 +130,12 @@ function CaseDetailModal({ caseItem, onClose, labels }: CaseDetailModalProps) {
           {/* Content */}
           <div className="p-8 md:p-10 space-y-6">
             <div className="flex items-start justify-between">
-              <h3 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white pr-4">
-                {caseItem.title}
-              </h3>
+              <div className="pr-4 space-y-1">
+                <h3 className="text-3xl md:text-4xl font-bold text-neutral-900 dark:text-white">
+                  {caseItem.title}
+                </h3>
+                <ReadTime content={getCaseStudyContent(caseItem)} />
+              </div>
               <button
                 onClick={onClose}
                 className="p-2 hover:bg-neutral-100/50 dark:hover:bg-neutral-800/50 rounded-xl transition-colors flex-shrink-0"

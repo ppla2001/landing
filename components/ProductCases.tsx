@@ -4,6 +4,8 @@ import { useState, useEffect, useRef } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
 
+const basePath = "/landing";
+
 interface CaseDetailModalProps {
   caseItem: any;
   onClose: () => void;
@@ -55,20 +57,29 @@ function CaseDetailModal({ caseItem, onClose, labels }: CaseDetailModalProps) {
           >
           {/* Image */}
           <div className="relative w-full h-64 bg-gradient-to-br from-accent-100 via-accent-200 to-accent-300 dark:from-accent-900 dark:via-accent-800 dark:to-accent-700 flex items-center justify-center overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent" />
-            <svg
-              className="relative z-10 w-24 h-24 text-accent-600 dark:text-accent-300"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={1.5}
-                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+            {caseItem.image ? (
+              <img
+                src={basePath + caseItem.image}
+                alt={caseItem.title}
+                className="absolute inset-0 w-full h-full object-cover"
               />
-            </svg>
+            ) : null}
+            <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent" />
+            {!caseItem.image && (
+              <svg
+                className="relative z-10 w-24 h-24 text-accent-600 dark:text-accent-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}
+                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                />
+              </svg>
+            )}
           </div>
 
           {/* Content */}
@@ -208,27 +219,36 @@ export default function ProductCases() {
                 {/* Hover glow effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-accent-500/0 to-accent-600/0 group-hover:from-accent-500/10 group-hover:to-accent-600/10 dark:group-hover:from-accent-400/5 dark:group-hover:to-accent-500/5 transition-all duration-500" />
 
-                {/* Image Placeholder */}
+                {/* Image */}
                 <div className="relative w-full h-48 bg-gradient-to-br from-accent-100 via-accent-200 to-accent-300 dark:from-accent-900 dark:via-accent-800 dark:to-accent-700 flex items-center justify-center overflow-hidden">
+                  {caseItem.image ? (
+                    <img
+                      src={basePath + caseItem.image}
+                      alt={caseItem.title}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                  ) : null}
                   <div className="absolute inset-0 bg-gradient-to-tr from-white/30 to-transparent" />
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    <svg
-                      className="w-16 h-16 text-accent-600 dark:text-accent-300 relative z-10"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                  {!caseItem.image && (
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ type: "spring", stiffness: 300 }}
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                      />
-                    </svg>
-                  </motion.div>
+                      <svg
+                        className="w-16 h-16 text-accent-600 dark:text-accent-300 relative z-10"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.5}
+                          d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                        />
+                      </svg>
+                    </motion.div>
+                  )}
                 </div>
 
                 {/* Content */}

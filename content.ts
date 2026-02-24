@@ -14,6 +14,7 @@ export const content = {
     // Hero Section
     hero: {
       name: "Pedro Pla",
+      image: "/yo-formal%20copy.jpeg",
       headline: "From Strategy to Execution",
       subtitle:
         "I connect product, growth, and operations to make things that actually work",
@@ -29,7 +30,7 @@ export const content = {
       items: [
         {
           id: 1,
-          image: "/case1.jpg",
+          image: "/willow.png",
           title: "Willow",
           summary:
             "Led product for a multi-channel inventory SaaS, taking it from zero to paying customers - owning discovery, prioritization, and front-end execution while navigating the constraints of an early-stage startup.",
@@ -46,7 +47,7 @@ export const content = {
         },
         {
           id: 2,
-          image: "/case2.jpg",
+          image: "/marketplace.jpg",
           title: "Luxury Real Estate Developments Marketplace",
           summary:
             "Led product definition for a real estate lead generation platform - transforming an ambiguous vision into a complete project specification including requirements, technical architecture, analytics plan, and development roadmap.",
@@ -63,7 +64,7 @@ export const content = {
         },
         {
           id: 3,
-          image: "/case3.jpg",
+          image: "/nft.jpg",
           title: "Trape",
           summary:
             "Fully specified a P2P NFT trading platform - from market analysis to technical architecture - then made the informed decision not to build it.",
@@ -209,6 +210,7 @@ export const content = {
     // Hero Section
     hero: {
       name: "Pedro Pla",
+      image: "/yo-formal%20copy.jpeg",
       headline: "De la estrategia a la ejecución",
       subtitle:
         "Conecto producto, growth y operaciones para construir cosas que realmente funcionan",
@@ -224,7 +226,7 @@ export const content = {
       items: [
         {
           id: 1,
-          image: "/case1.jpg",
+          image: "/willow.png",
           title: "Willow",
           summary:
             "Lideré producto en un SaaS de inventario multicanal, llevándolo de cero a primeros clientes pagos - siendo responsable del discovery, la priorización y la ejecución front-end mientras navegaba las limitaciones de una startup en etapa temprana.",
@@ -241,7 +243,7 @@ export const content = {
         },
         {
           id: 2,
-          image: "/case2.jpg",
+          image: "/marketplace.jpg",
           title: "Marketplace de Desarrollos Inmobiliarios de Lujo",
           summary:
             "Lideré la definición de producto para una plataforma de generación de leads inmobiliarios  -  transformando una visión ambigua en una especificación completa de proyecto que incluía requerimientos, arquitectura técnica, plan de analítica y roadmap de desarrollo.",
@@ -258,7 +260,7 @@ export const content = {
         },
         {
           id: 3,
-          image: "/case3.jpg",
+          image: "/nft.jpg",
           title: "Trape",
           summary:
             "Definí por completo una plataforma P2P de intercambio de NFTs  -  del análisis de mercado a la arquitectura técnica  -  y con esa claridad, decidí no construirla.",

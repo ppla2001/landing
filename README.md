@@ -1,39 +1,56 @@
-# Product Manager Landing Page
+# Pedro Pla · Product & Growth
 
-A modern, minimal personal landing page for Product Manager job search, built with Next.js 14, TypeScript, and Tailwind CSS.
+Personal landing page for Pedro Pla — Product Manager focused on strategy, execution, and growth. Built with Next.js 14, TypeScript, Tailwind CSS, and Framer Motion.
 
 ## Features
 
-- **Dark/Light Mode Toggle**: Smooth theme transitions with persistence and system preference detection
-- **Bilingual Support**: Toggle between English and Spanish (EN/ES)
-- **Smooth Animations**: Subtle scroll and hover animations throughout
-- **Sticky Navbar**: Transitions from transparent to solid on scroll
-- **Product Cases**: Expandable case study cards with modal details
-- **Animated Metrics**: Numbers that count up on scroll
-- **Responsive Design**: Mobile-first, works beautifully on all devices
-- **Premium Aesthetic**: Clean, editorial design inspired by Linear, Notion, and Stripe
+- **Dark/Light Mode**: Theme toggle with persistence and system preference detection
+- **Bilingual (EN/ES)**: Toggle between English and Spanish
+- **Hero Section**: Headline, photo, and CTA buttons
+- **Product Cases**: Three case studies (Willow, Luxury Real Estate Marketplace, Trape) with images and expandable modal details
+- **Impact Metrics**: Animated counters on scroll
+- **Background**: Experience timeline and product philosophy
+- **Contact**: Contact section with email modal
+- **Responsive**: Mobile-first design
+- **Static Export**: Configured for GitHub Pages deployment
+
+## Tech Stack
+
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Static export (`output: "export"`) with `basePath: "/landing"`
 
 ## Project Structure
 
 ```
+landing/
 ├── app/
 │   ├── layout.tsx          # Root layout with providers
 │   ├── page.tsx            # Main page composition
 │   └── globals.css         # Global styles and animations
 ├── components/
-│   ├── Navbar.tsx          # Sticky navigation with toggles
-│   ├── Hero.tsx            # Hero section with CTA buttons
-│   ├── ProductCases.tsx    # Case studies with modal
+│   ├── Navbar.tsx          # Sticky navigation with theme/language toggles
+│   ├── Hero.tsx            # Hero section with photo and CTAs
+│   ├── ProductCases.tsx    # Case studies with images and modal
 │   ├── ImpactMetrics.tsx   # Animated counter metrics
 │   ├── Background.tsx      # Experience timeline + philosophy
 │   ├── Contact.tsx         # Contact section
-│   └── Footer.tsx          # Minimal footer
+│   ├── Footer.tsx          # Footer
+│   └── ScrollToTop.tsx     # Scroll-to-top button
 ├── contexts/
-│   ├── ThemeContext.tsx    # Dark/light mode management
-│   └── LanguageContext.tsx # EN/ES language management
-├── content.ts              # All content with placeholders
-├── tailwind.config.ts      # Tailwind configuration
-└── package.json            # Dependencies
+│   ├── ThemeContext.tsx    # Dark/light mode
+│   ├── LanguageContext.tsx # EN/ES language
+│   └── EmailModalContext.tsx # Contact modal state
+├── content.ts              # All site content (EN + ES)
+├── public/                 # Static assets
+│   ├── willow.png          # Willow case study image
+│   ├── yo-formal copy.jpeg # Hero photo
+│   ├── marketplace.jpg     # Real estate case image
+│   └── nft.jpg             # Trape case image
+├── next.config.mjs         # basePath for GitHub Pages
+└── package.json
 ```
 
 ## Getting Started
@@ -50,101 +67,24 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open [http://localhost:3000/landing](http://localhost:3000/landing) in your browser.
 
 ### Build for Production
 
 ```bash
 npm run build
-npm start
 ```
+
+Output is written to the `out/` folder (static HTML, CSS, JS).
+
+## Deployment (GitHub Pages)
+
+The project uses `basePath: "/landing"` and `assetPrefix: "/landing/"` for GitHub Pages. Deploy the contents of the `out` folder to your repository. The site will be available at `https://<username>.github.io/<repo-name>/landing/`.
 
 ## Customizing Content
 
-All content is centralized in `content.ts` with clear placeholders. Search for `[PLACEHOLDER_NAME]` to find and replace with your actual content:
+All content lives in `content.ts` with separate `en` and `es` sections. Edit the relevant keys to update copy, images (paths under `public/`), or structure.
 
-### Key Placeholders to Replace
+## Images
 
-**Personal Info:**
-- `[YOUR_NAME]`, `[YOUR_FULL_NAME]`
-- `[YOUR_HEADLINE]`, `[YOUR_SUBTITLE]`
-- `[EMAIL]`, `[LINKEDIN_URL]`
-
-**Product Cases (3 cases):**
-- `[CASE_X_TITLE]`, `[CASE_X_SUMMARY]`
-- `[CASE_X_PROBLEM]`, `[CASE_X_HYPOTHESIS]`
-- `[CASE_X_PROPOSAL]`, `[CASE_X_METRICS]`
-
-**Impact Metrics (4 metrics):**
-- `[METRIC_X_NUMBER]`, `[METRIC_X_DESCRIPTION]`
-
-**Background (4 experience items):**
-- `[ROLE_X]`, `[COMPANY_X]`, `[DESCRIPTION_X]`
-- `[BELIEF_1]`, `[BELIEF_2]`, `[BELIEF_3]`
-
-**Contact:**
-- `[CONTACT_MESSAGE]`
-
-Replace placeholders in both `en` and `es` sections of `content.ts`.
-
-## Design System
-
-### Colors
-
-The site uses warm neutrals with an accent color (red/coral by default):
-- Primary accent: `accent-600` in light mode, `accent-400` in dark mode
-- Neutrals: `neutral-50` to `neutral-950`
-
-To change the accent color, edit `tailwind.config.ts`:
-
-```typescript
-colors: {
-  accent: {
-    // Your color scale here
-  },
-}
-```
-
-### Typography
-
-Uses Inter font (loaded via Google Fonts) with generous whitespace and modern sizing.
-
-### Animations
-
-- Fade-in and slide-up on scroll
-- Hover lift effects on cards and buttons
-- Smooth theme transitions
-- Animated number counters in metrics section
-
-## Deployment
-
-### Vercel (Recommended)
-
-1. Push to GitHub
-2. Import project in Vercel
-3. Deploy automatically
-
-### Other Platforms
-
-Build the static site:
-
-```bash
-npm run build
-```
-
-Deploy the `.next` folder to your hosting platform.
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-## License
-
-MIT
-
----
-
-**Note**: This is a template with placeholder content. Replace all `[PLACEHOLDER]` values in `content.ts` with your actual information before deploying.
+Place images in the `public/` folder and reference them with paths like `/filename.jpg` in `content.ts`. With `basePath`, they are served at `/landing/filename.jpg`. Avoid including `public` in the path.

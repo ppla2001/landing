@@ -100,30 +100,24 @@ export const content = {
 
     // Key Decisions & Trade-offs Section
     impact: {
-      title: "The Thinking Behind the Work",
+      title: "How I Work",
       decisions: [
         {
-          title: "Embrace ambiguity, ship clarity",
+          title: "Move first, refine later",
           description:
-            "Never waited for perfect information. Built structured frameworks and decision trees to move forward - then refined as reality pushed back.",
+            "Frameworks, decision trees, rapid prototypes - whatever gets things out of the abstract fastest. Stakeholders rarely know what they want until they see what they don't.",
           tradeoff: "Some assumptions broke. But momentum never did.",
         },
         {
-          title: "When words fail, prototype",
+          title: "Align before you build",
           description:
-            "Stakeholders rarely know what they want until they see what they don't. Used rapid mockups as a forcing function to surface real requirements faster than any discovery meeting could.",
-          tradeoff: "More upfront work. Less costly late-stage pivots.",
-        },
-        {
-          title: "Documentation as alignment, not bureaucracy",
-          description:
-            "Full technical architecture, analytics plans, and structured backlogs before a single line of code. Not because process demands it - because ambiguity compounds when everyone's working from a different version of the truth.",
+            "Full specs, analytics plans, and structured backlogs before a single line of code. Not because process demands it - because ambiguity compounds when everyone's working from a different version of the truth.",
           tradeoff: "Slower starts. Faster everything else.",
         },
         {
-          title: "The best product decision is sometimes not building",
+          title: "Know when not to build",
           description:
-            "On Trape, delivered a no-build recommendation after identifying security vulnerabilities with no viable fix. Protected end users over hitting a launch milestone.",
+            "On Trape, I decided not to launch after identifying security vulnerabilities with no viable fix. Protected end users over hitting a milestone.",
           tradeoff:
             "No shipped product. But the right call - and the harder one to make.",
         },
@@ -296,33 +290,27 @@ export const content = {
 
     // Key Decisions & Trade-offs Section
     impact: {
-      title: "La lógica detrás de las decisiones",
+      title: "Cómo trabajo",
       decisions: [
         {
-          title: "Estructura para decidir, no para frenar",
+          title: "Avanzar primero, ajustar después",
           description:
-            "Ante la incertidumbre, no esperé tener todas las respuestas. Construí frameworks y árboles de decisión para avanzar con criterio  -  y los ajusté cuando la realidad los desafió.",
+            "Frameworks, árboles de decisión, prototipos rápidos - lo que sirva para salir de lo abstracto lo antes posible. Los stakeholders rara vez saben lo que quieren hasta que ven lo que no.",
           tradeoff:
-            "Avanzar sin certeza implica asumir riesgos. Pero quedarse quieto esperando información perfecta tiene un costo mayor.",
+            "No todas las apuestas salieron bien. Pero frenar nunca fue opción.",
         },
         {
-          title: "Un prototipo vale más que mil reuniones",
+          title: "Alinear antes de construir",
           description:
-            "Las personas rara vez saben lo que necesitan hasta que tienen algo concreto frente a ellas. Usé mockups rápidos para hacer visible lo invisible  -  y descubrir los requisitos reales antes de comprometer tiempo y recursos.",
+            "Documentación técnica completa, planes de analytics y backlogs estructurados antes de escribir una sola línea de código. No por burocracia - porque cuando cada uno entiende algo distinto, los problemas se multiplican solos.",
           tradeoff: "Más trabajo al inicio. Menos sorpresas al final.",
         },
         {
-          title: "Documentación como alineación, no como burocracia",
+          title: "Saber cuándo no construir",
           description:
-            "Arquitectura técnica completa, planes de analytics y backlogs estructurados antes de escribir una sola línea de código. No porque el proceso lo exija  -  sino porque la ambigüedad se multiplica cuando cada uno trabaja desde una versión distinta de la verdad.",
-          tradeoff: "Arranques más lentos. Todo lo demás, más rápido.",
-        },
-        {
-          title: "A veces, la mejor decisión de producto es no construir",
-          description:
-            "En Trape, tras un análisis profundo identifiqué vulnerabilidades de seguridad sin solución viable. La conclusión fue clara: no había producto que valiera la pena lanzar en esas condiciones. Decidí no construirlo.",
+            "En Trape, decidí no lanzar tras identificar vulnerabilidades de seguridad sin solución viable. Prioricé proteger a los usuarios por encima de cumplir un hito.",
           tradeoff:
-            "Sin producto lanzado. Pero proteger a los usuarios finales siempre va a pesar más que cumplir un milestone.",
+            "No se lanzó producto. Fue la decisión correcta - y la más difícil de tomar.",
         },
       ],
     },

@@ -15,7 +15,7 @@ export default function ImpactMetrics() {
       <div className="absolute inset-0 bg-gradient-to-b from-neutral-50 via-white to-neutral-50 dark:from-neutral-900 dark:via-neutral-950 dark:to-neutral-900" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent-500/5 dark:bg-accent-400/3 rounded-full blur-3xl" />
 
-      <div className="relative max-w-7xl mx-auto">
+      <div className="relative max-w-5xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -26,7 +26,7 @@ export default function ImpactMetrics() {
           {t.impact.title}
         </motion.h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {t.impact.decisions.map((decision, index) => (
             <motion.div
               key={index}

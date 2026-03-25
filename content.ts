@@ -4,7 +4,7 @@ export const content = {
     nav: {
       name: "Pedro Pla",
       links: [
-        { label: "Product Cases", href: "#cases" },
+        { label: "My Work", href: "#cases" },
         { label: "Process", href: "#impact" },
         { label: "Background", href: "#background" },
         { label: "Contact", href: "#contact" },
@@ -17,7 +17,7 @@ export const content = {
       image: "/yo-formal%20copy.jpeg",
       headline: "From Strategy to Execution",
       subtitle:
-        "I connect product, growth, and operations to make things that actually work",
+        "I help make things happen - whether it's shaping strategy, building solutions, or improving what's already there",
       cta: {
         primary: "See My Work",
         secondary: "Let's Talk",
@@ -26,14 +26,14 @@ export const content = {
 
     // Product Cases Section
     cases: {
-      title: "Product Thinking",
+      title: "My Work",
       items: [
         {
           id: 1,
           image: "/willow.png",
           title: "Willow",
           summary:
-            "Led product for a multi-channel inventory SaaS, taking it from zero to paying customers - owning discovery, prioritization, and front-end execution while navigating the constraints of an early-stage startup.",
+            "Co-founded a multi-channel inventory SaaS, taking it from zero to paying customers - owning discovery, prioritization, and front-end execution, among other tasks, while navigating the constraints of an early-stage startup.",
           problem:
             "In Argentina, most e-commerce businesses don't sell through just one channel. A typical retailer might have their own online store (built on TiendaNube, Shopify, WooCommerce, etc.), listings on marketplaces like MercadoLibre or Frávega, and sometimes a physical location. Each channel has its own inventory system, product catalog, and rules.\n\nThis creates painful operational realities. For example, when a product sells on MercadoLibre, the retailer has to manually update stock on TiendaNube and every other channel. If they forget or move too slowly, they risk overselling items they don't have. Many retailers split inventory across channels to work around this, but lose visibility into their actual total stock.\n\nThe complexity goes beyond inventory. MercadoLibre's marketplace search algorithm rewards different keywords than what a retailer might use in their own store, so retailers often need different product titles per platform. Commission structures vary, so prices might differ too. Some MercadoLibre sellers create multiple listings for the same product - one with installment pricing, another for one-time payment - each requiring separate management.\n\nFor small and mid-sized retailers without dedicated operations teams, this meant hours of repetitive work daily, constant error risk, and no clear picture of their inventory position.",
           discovery:
@@ -111,7 +111,7 @@ export const content = {
         {
           title: "Align before you build",
           description:
-            "Full specs, analytics plans, and structured backlogs before a single line of code. Not because process demands it - because ambiguity compounds when everyone's working from a different version of the truth.",
+            "Once direction is clear, full specs, analytics plans, and structured plans before committing resources. Not because process demands it - because ambiguity compounds when everyone's working from a different version of the truth.",
           tradeoff: "Slower starts. Faster everything else.",
         },
         {
@@ -128,7 +128,7 @@ export const content = {
     background: {
       title: "Background",
       philosophy: {
-        title: "My Product Philosophy",
+        title: "How I think",
         beliefs: [
           "Clarity before solutions - figure out the real problem first.",
           "Shipping beats perfecting - a working prototype teaches more than a perfect spec.",
@@ -158,7 +158,7 @@ export const content = {
           role: "Marketing Analyst",
           company: "Agencia Empuje",
           description:
-            "My first agency job, running several e-commerce accounts in parallel. Paid media, CRO, competitive analysis  -  but what stuck with me most was learning to translate what a client says they want into something a team can actually execute. Looking back, I was operating like a PM before I knew that's what I wanted to do.",
+            "My first agency job, running several e-commerce accounts in parallel. Paid media, CRO, competitive analysis  -  but what stuck with me most was learning to translate what a client says they want into something a team can actually execute. Looking back, I was already connecting what clients needed with what a team could deliver - figuring out priorities, coordinating across people, and making things move.",
         },
       ],
     },
@@ -167,7 +167,7 @@ export const content = {
     contact: {
       title: "Let's Talk",
       message:
-        "Open to PM, growth, and strategy roles - especially at teams that move fast and think deeply.",
+        "Looking for my next challenge in a team that moves fast, with real ownership, and needs someone who can figure things out and get them done.",
       linkedin: "https://www.linkedin.com/in/pedro-pla1/",
       email: "plapedro@outlook.com",
       emailModal: {
@@ -194,7 +194,7 @@ export const content = {
     nav: {
       name: "Pedro Pla",
       links: [
-        { label: "Casos de Producto", href: "#cases" },
+        { label: "Mi Trabajo", href: "#cases" },
         { label: "Proceso", href: "#impact" },
         { label: "Experiencia", href: "#background" },
         { label: "Contacto", href: "#contact" },
@@ -207,7 +207,7 @@ export const content = {
       image: "/yo-formal%20copy.jpeg",
       headline: "De la estrategia a la ejecución",
       subtitle:
-        "Conecto producto, growth y operaciones para construir cosas que realmente funcionan",
+        "Ayudo a que las cosas pasen - ya sea armando estrategia, construyendo soluciones, o mejorando lo que ya existe",
       cta: {
         primary: "Ver Mi Trabajo",
         secondary: "Hablemos",
@@ -216,14 +216,14 @@ export const content = {
 
     // Product Cases Section
     cases: {
-      title: "Producto en acción",
+      title: "Mi trabajo",
       items: [
         {
           id: 1,
           image: "/willow.png",
           title: "Willow",
           summary:
-            "Lideré producto en un SaaS de inventario multicanal, llevándolo de cero a primeros clientes pagos - siendo responsable del discovery, la priorización y la ejecución front-end mientras navegaba las limitaciones de una startup en etapa temprana.",
+            "Co-fundé una SaaS de inventario multicanal, llevándolo de cero a primeros clientes pagos - siendo responsable del discovery, la priorización y la ejecución front-end, entre otras tareas, mientras navegaba las limitaciones de una startup en etapa temprana.",
           problem:
             "En Argentina, la mayoría de los negocios de e-commerce no venden por un solo canal. Un retailer típico puede tener su propia tienda online (en TiendaNube, Shopify, WooCommerce, etc.), publicaciones en marketplaces como MercadoLibre o Frávega, y a veces un local físico. Cada canal tiene su propio sistema de inventario, catálogo de productos y reglas propias.\n\nEsto genera realidades operativas muy dolorosas. Cuando un producto se vende en MercadoLibre, el retailer tiene que actualizar el stock manualmente en TiendaNube y en todos los demás canales. Si se olvida o tarda demasiado, arriesga vender productos que no tiene. Muchos retailers dividían el inventario entre canales como solución, pero perdían visibilidad del stock real total.\n\nLa complejidad va más allá del inventario. El algoritmo de búsqueda de MercadoLibre premia palabras clave distintas a las que un retailer usaría en su propia tienda, por lo que los títulos suelen tener que ser distintos por plataforma. Las estructuras de comisión varían, así que los precios también pueden diferir. Algunos vendedores de MercadoLibre crean múltiples publicaciones para un mismo producto  -  una con precio en cuotas, otra de pago único  -  cada una requiriendo gestión por separado.\n\nPara retailers pequeños y medianos sin equipos de operaciones dedicados, esto significaba horas de trabajo repetitivo por día, riesgo constante de errores y ninguna visión clara de su posición de inventario.",
           discovery:
@@ -302,7 +302,7 @@ export const content = {
         {
           title: "Alinear antes de construir",
           description:
-            "Documentación técnica completa, planes de analytics y backlogs estructurados antes de escribir una sola línea de código. No por burocracia - porque cuando cada uno entiende algo distinto, los problemas se multiplican solos.",
+            "Una vez clara la dirección, documentación completa, planes de analytics y planificación estructurada antes de comprometer recursos. No por burocracia - porque cuando cada uno entiende algo distinto, los problemas se multiplican solos.",
           tradeoff: "Más trabajo al inicio. Menos sorpresas al final.",
         },
         {
@@ -319,7 +319,7 @@ export const content = {
     background: {
       title: "Experiencia",
       philosophy: {
-        title: "Mi Filosofía de Producto",
+        title: "Cómo pienso",
         beliefs: [
           "El problema primero, las soluciones después  -  primero hay que entender el problema real.",
           "Ejecutar enseña más que planificar  -  un prototipo que funciona vale más que un documento perfecto.",
@@ -349,7 +349,7 @@ export const content = {
           role: "Marketing Analyst",
           company: "Agencia Empuje",
           description:
-            "Mi primer trabajo en agencia, llevando varias cuentas de e-commerce en paralelo. Paid media, CRO, análisis competitivo  -  pero lo que más me quedó fue aprender a traducir lo que un cliente dice que quiere en algo que un equipo puede realmente ejecutar. Mirando atrás, estaba operando como PM antes de saber que era eso lo que quería hacer.",
+            "Mi primer trabajo en agencia, llevando varias cuentas de e-commerce en paralelo. Paid media, CRO, análisis competitivo  -  pero lo que más me quedó fue aprender a traducir lo que un cliente dice que quiere en algo que un equipo puede realmente ejecutar. Mirando atrás, ya estaba conectando lo que los clientes necesitaban con lo que un equipo podía ejecutar - definiendo prioridades, coordinando entre personas, y haciendo que las cosas avancen.",
         },
       ],
     },
@@ -358,7 +358,7 @@ export const content = {
     contact: {
       title: "Hablemos",
       message:
-        "Abierto a roles de PM, growth y estrategia - sobre todo en equipos que actúan rápido y piensan en grande.",
+        "Busco mi próximo desafío en un equipo que se mueva rápido, con ownership real, y que necesite a alguien que pueda entender problemas y resolverlos.",
       linkedin: "https://www.linkedin.com/in/pedro-pla1/",
       email: "plapedro@outlook.com",
       emailModal: {

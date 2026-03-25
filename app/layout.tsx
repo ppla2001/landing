@@ -12,7 +12,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Pedro Pla · Product & Growth",
+  title: "Pedro Pla · Portfolio",
   description:
     "I turn ambiguous problems into clear roadmaps, ship products that scale, and find growth levers others miss.",
 };
